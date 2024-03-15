@@ -24,11 +24,14 @@ Nodejs is a single threaded application. However there are ways we can make use 
 
 ## MongoDB 
 
-1. **Aggregation** - TODO    
+1. **Aggregation**
+       
+   
 
+2. **Join** - WIP  
+   * createView in MongoDB    
+       Mongodb provides `createView` to perform joining of 2 collections, you can find the reference [here](https://www.mongodb.com/docs/manual/core/views/join-collections-with-view/#:~:text=You%20can%20use%20%24lookup%20to,construct%20or%20maintain%20complex%20pipelines.)
 
-
-2. **Join** - TODO  
-   Reference Link can be found [here](https://www.mongodb.com/docs/manual/core/views/join-collections-with-view/#:~:text=You%20can%20use%20%24lookup%20to,construct%20or%20maintain%20complex%20pipelines.)  
+   * Equivalent operation in Mongoose - TODO  
 
    

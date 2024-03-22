@@ -66,6 +66,8 @@ Similar to child processes, worker threads used to
 
 ## Javascript 
 
+1. **JS Context**  
+
 1. **Currying**  
 Function with multiple parameters are transformed into sequence of functions with single parameter in each function.  
    * Improves modularity 
@@ -73,10 +75,17 @@ Function with multiple parameters are transformed into sequence of functions wit
    * Improves code reusability 
    * Higher order function creation 
 
-
 1. **Throttling**  
+   * Technique that allows to control the rate of execution of a function. Or the function is not called more than one time during the given time interval.  
+   * This helps to improve the performance of the website if the function is complex or involves API calls etc. 
+   * Helpful in use cases such as window resize, auto-fill etc.   
+   * Starts the execution of a function, if the function is invoked again within the given interval function would not be executed. If the time interval exceeds the function gets executed.  
 
 2. **Debouncing**    
+   * Technique used to improve the performance of the webpage by controlling the time at which the function should be executed.
+   * Delays the execution of a function. 
+   * This helps in improve the performance of the website by controlling the repetitive execution of the function. 
+   * Helpful in use cases such as even handling button, resize, scrolling etc.   
 
 ## MongoDB 
 

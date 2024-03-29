@@ -98,3 +98,116 @@ Function with multiple parameters are transformed into sequence of functions wit
    * Equivalent operation in Mongoose - TODO  
 
    
+## Architecture 
+
+### Scaling  
+
+* multiple concurrent requests / high number of requests  
+* computationally complex operations / computationally slow endpoints 
+* server goes down / server failure 
+
+### Load Balancer 
+
+### CDN  
+
+### Caching  
+
+### 
+
+## Reactjs 
+
+1. **Hooks**  
+   * Hooks are the functions that let us hook into the react state and lifecycle features from function components 
+
+2. **DOM**   
+   * Document Object Model 
+   * The webpage / website elements are stored in the tree representation   
+   * Updating the DOM is very inefficient, even if single element changes the whole DOM elements needs to be processed and rendered again. 
+   * Update process
+     * Virtual DOM is the blueprint of the actual DOM. 
+     * There are 2 virtual DOMs, one with the updated items, and one with the previous state. 
+     * Whenever JSX gets rendered, the virtual DOM gets updated. 
+     * React compares the 2 virtual DOMs, and identifies only those compoenents that are changed. 
+     * React then updates the actual DOM. 
+
+3. **Virtual DOM**  
+   * This is the copy of the actual DOM in the memory which is used by reactJS update the rendering more efficiently. 
+  
+4. **useState**   
+   * Allows users to track the state in a functional component 
+   * Use it when the code has dynamically changing variable / state 
+
+5. **Keys**  
+   * Special unique string that needs to be assigned to each element when the component has list of items 
+   * Keys helps react to understand which item has been removed / updated / added, and thus helps in rendering. 
+   * Optimized reconcilation and improved performance - During reconcilation reactjs compares the list with the previous one. Without the keys the process is inefficient, and react may have to render the whole list again. But with keys, react will render only those items which are effected. 
+
+6. **props**  
+   * Inputs to the react component 
+   * Can be used to pass the parameters from parent to child component 
+
+
+useState  
+useEffect   
+useContext   
+useReducer  
+useMemo   
+useCallback   
+useRef   
+
+What are higher order components (what, why, when, how)   
+
+Maching coding round   
+
+Life cycle methods of components - 3 phases    
+
+* Mounting 
+* Updating  
+* Unmounting  
+
+State management (state and props)  
+* state and props 
+* context 
+* props drilling  
+
+Redux  
+Zustand (new alternative to Redux?)
+* How redux ? 
+* Why redux ? 
+* when redux ? 
+
+Redux tool kit  
+
+Custom hooks  
+* what 
+* when 
+* why 
+* code  
+
+Lazy loading - performance    
+* Code splitting  
+* Chunking  
+* Suspense  
+
+Virtual DOM  
+* Reconcilation 
+* React fiber 
+* Render 
+* Diffing algorithm 
+* How render works ? 
+
+SSR and CSR 
+
+Routing (RBAC)  
+* react-routing 
+* protected routes 
+
+
+
+
+
+
+
+
+
+

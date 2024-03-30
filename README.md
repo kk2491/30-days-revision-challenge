@@ -3,7 +3,14 @@
 
 ## NodeJs 
 
-1. **Event Loop**  
+1. **What is NodeJS**   
+Free, open source, cross platform Javascript run time built on Chrome's Javascript V8 engine. Helps create Web services, scripts etc seamlessly.   
+
+2. **Event Loop**   
+   * Event loop is a feature that allows to NodeJS to perform non blocking I/O operations despite the fact that the Javascript is single threaded.   
+   * NodeJS single threaded application, whenever a function is called it is added to the call stack. 
+   * If the function contains a callback function, once the function execution is completed callback is added to the callback queue.  
+   * It is a process, where NodeJS continuously monitors the callstack, if the callstack is empty it takes the first function from the callback queue, and pushes to the callstack.   
 
 2. **package.json**  
    * Simplied way to manage the project metadata and dependencies. 
@@ -12,6 +19,8 @@
 3. **package-lock.json**  
    * Lock the dependencies to specific versions, ensuring the consistent installation across different environment. 
    * Gurantees reproducibility by making sure specif version of the package is installed. 
+
+4. **Timers**  
 
 4. **Parallel execution**   
 Nodejs is a single threaded application. However there are ways we can make use of the multiple threads / CPU cores to effectively utilize the available resources. 
@@ -22,7 +31,7 @@ Nodejs is a single threaded application. However there are ways we can make use 
 
    For now, only the child processe and Clusters are covered, other methods will be captured in the later part. 
 
-5. **Worker Threads**  
+5. **Worker Threads**   
 Similar to child processes, worker threads used to 
 
 
@@ -68,24 +77,33 @@ Similar to child processes, worker threads used to
 
 1. **JS Context**  
 
-1. **Currying**  
+2. **Currying**  
 Function with multiple parameters are transformed into sequence of functions with single parameter in each function.  
    * Improves modularity 
    * Improves readability 
    * Improves code reusability 
    * Higher order function creation 
 
-1. **Throttling**  
+3. **Throttling**  
    * Technique that allows to control the rate of execution of a function. Or the function is not called more than one time during the given time interval.  
    * This helps to improve the performance of the website if the function is complex or involves API calls etc. 
    * Helpful in use cases such as window resize, auto-fill etc.   
    * Starts the execution of a function, if the function is invoked again within the given interval function would not be executed. If the time interval exceeds the function gets executed.  
 
-2. **Debouncing**    
+4. **Debouncing**    
    * Technique used to improve the performance of the webpage by controlling the time at which the function should be executed.
    * Delays the execution of a function. 
    * This helps in improve the performance of the website by controlling the repetitive execution of the function. 
    * Helpful in use cases such as even handling button, resize, scrolling etc.   
+
+
+## ExpressJS 
+
+1. **What is expressJS?**   
+   * Flexible nodeJS web application framework that provides a set of features for web and mobile applications. 
+   * Framework that works on top of the NodeJS, to simplify the API development and to add additional features. 
+   * Makes it easier to organize the application using routing and middleware. 
+
 
 ## MongoDB 
 

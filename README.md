@@ -118,6 +118,23 @@
    * This helps in improve the performance of the website by controlling the repetitive execution of the function. 
    * Helpful in use cases such as even handling button, resize, scrolling etc.   
 
+5. **ES6 - ECMAScript 6** 
+   * 6th version of the ECMAScript 
+   * European Computer Manufacturers Association Script  
+
+   **New Functions introduced**   
+   * `find` - Finds the element in the given array satisfying the test provided in the function
+   * `findIndex` - Finds the element in the given array satisfying the test provided in the function
+   * `forEach` - Executes the provided function for each element in the array   
+   * `some` - Checks at least one element passes the test provided in the function 
+   * `every` - Checks if all the elements passes the test provided in the function  
+   * `map` - Creates a new array using the function provided by going through every elements in the original array 
+   * `filter` - Creates a new array with the elements that passes tests given in the provided function     
+   * `reduce` - Creates / reduces all elements into a single value by applying the provided function against an accumulator and each element  
+   * `concat` - Merge 2 or more arrays (creates new array, does not update the existing arrays)
+   * `slice` - Returns a shallow copy of a portion of an array into a new array. From start to end (end not included). 
+   * `join` - Creates a new string by concatenating all the elements in the array separated by the commas or a specified separator (comma is default). 
+
 ## ExpressJS 
 
 1. **What is expressJS?**   

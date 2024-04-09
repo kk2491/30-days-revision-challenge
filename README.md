@@ -60,19 +60,36 @@
    In the above example, when `var` is used, the variable gets hoisted to the global scope. Hence the value of the `i` becomes 3.   
    However when `let` is used, in each loop `i` the value of `i` is retained. 
 
-10. **Middleware**  
+10. **Event Emitter** and **Event Listeners**   
+   **Event Emitter** - Fundamental concept and built-in module in NodeJS that facilitates event-driven programming. It allows objects to emit named events asynchronously, and register functions to the event which will be called once the named events are emitted. 
+   **Event Listeners** - Also known as event handlers or subscribers. Functions that are registered with an event to respond to specific events when they occur. 
+
+11. **Buffers**   
+   * Small area in the memory that NodeJS maintains during the run time to process the stream of data.    
+   * NodeJS can not control the pace at which data arrives at the stream. 
+   * It can only decide when is the right time to send the data for processing. 
+   * Example of roller coaster.
+   * Example : streaming video 
+
+12. **Streams**   
+   * Sequence of data that is being transferred from one point to another. 
+   * Example : stream of data from one computer to another, stream of data from one location to another in the same computer, youtube etc
+   * Works with chunks of data instead of waiting for the whole data. 
+   * Built-in module inherits from event emitter class. 
+
+13. **Middleware**  
    A request handler with access to the application's request-response cycle.  
    * Logging 
    * Authentication
    * Rate limiting 
 
-11. **Rate Limiting**  - TODO 
+14. **Rate Limiting**  - TODO 
    * express-rate-limit 
    * cloud armour 
 
-12. **Design Patterns** - TODO  
+15. **Design Patterns** - TODO  
 
-13. **OOP** - TODO     
+16. **OOP** - TODO     
    a. Abstraction
    b. Encapsulation
    c. Inheritance
@@ -234,6 +251,9 @@ Routing (RBAC)
 * react-routing 
 * protected routes 
 
+Binary Data  
+Character Set  
+Character Encoding   
 
 ## Datadog    
    * Monitoring service used to visualize the metrics and perform perfomance analysis. 

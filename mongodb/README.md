@@ -35,3 +35,14 @@ Before we proceed with the explanation here are some useful links to go through.
 * [Practical MongoDB Aggregation](https://www.practical-mongodb-aggregations.com/)
 * [Aggregation Examples](https://www.mongodb.com/docs/manual/reference/operator/aggregation/#std-label-aggregation-expressions)
 
+
+## SQL Injection  
+
+* Code injection technique which may have serious impact on the database (even potentially destroy the database as well). 
+* Malicious technique where hackers can try to perform operations by adding malformed code (access the data not intented). 
+
+**Preventions**   
+* Use parameterized queries instead of string concatenation. 
+* Input validation - to identify the legitamate user inputs.  
+* Web Application Firewall.   
+* 

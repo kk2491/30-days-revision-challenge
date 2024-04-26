@@ -1,6 +1,31 @@
 # 30-days-challenge
 30 days challenge containing various topics. 
 
+## Basics 
+
+1. **How WEB Works**   
+   * User enters the website URL (Uniform Resource Locator) in the browser
+   * Understanding the address -> Separates the human readable domain name (for example google.com)
+   * Finding the IP address -> Browser needs to translate the domain into IP address. It uses the DNS to do so. (Uses the cached data if available in the history)
+   * Connecting and Requesting -> Initiates the connection with the corresponding Google server. It uses HTTP protocol to establish the connection between browser and server.  
+   * Securiing Connection (HTTPS) -> Encrypts the communication between the device and the web browser. 
+   * Sending the Request -> The browser sends the request to the web server.  
+   * Server Response -> Web server receives the Request, and prepares the response. The response contains the HTML code for the webpage along with the images, videos etc. 
+   * Rendering the Response -> The browser receives the response, and renders the HTML data to the browser.  
+
+2. **HTTP**    
+   * Application level protocol (TCP / IP protocol)
+   * Full form - Hyper Text Transform Protocol   
+   * It is a protocol (prescribed order or syntax for presenting the information) used for transferring the data over a network. 
+   * Two main HTTP messages - **Request** and **Response**   
+   * 
+
+3. **HTTPS**  
+
+4. **Difference between HTTP and HTTPS**  
+
+5. **Life cycle of Request**   
+
 ## NodeJs 
 
 1. **What is NodeJS**   
@@ -87,13 +112,34 @@
    * express-rate-limit 
    * cloud armour 
 
-15. **Design Patterns** - TODO  
+15. **npm install**   
+   Difference between `npm install` and `npm install -g`.  <br /> <br />
+   `npm install`  
+    * Installs the package within the current project directory. 
+    * Installation is added in the `node_modules` folder of the current project directory. 
+    * Scoped to the project, not accessible globally on the system.  <br /> <br />
+   `npm install -g`  
+    * Installs the package globally on the system. 
+    * Global packages are install in the `/usr/local` directory.  Binaries are stored in the `/usr/local/bin` and the `node_modules` are stored in `/usr/local/lib`. 
 
-16. **OOP** - TODO     
+16. **Design Patterns** - TODO  
+
+17. **OOP** - TODO     
    a. Abstraction
    b. Encapsulation
    c. Inheritance
    d. Polymorphism 
+
+18. **HTTP Methods**   
+   * **POST**  -> Create -> Should return 201 
+   * **PUT**   -> Complete Replacement -> Should return 200 / 204 (no content / body)  
+   * **PATCH** -> Partial Update -> Should return 200 / 204 (no content / body)  
+
+19. **OPTIONS**   
+   * Understanding HTTP methods are supported 
+   * Determine the headers supported by a particular resource 
+   * Determine whether a particular resource is available or not 
+   * Determine whether the CORS is allowed 
 
 ## Javascript 
 
@@ -134,6 +180,10 @@
    * `concat` - Merge 2 or more arrays (creates new array, does not update the existing arrays)
    * `slice` - Returns a shallow copy of a portion of an array into a new array. From start to end (end not included). 
    * `join` - Creates a new string by concatenating all the elements in the array separated by the commas or a specified separator (comma is default). 
+
+6. **Types of exports**   
+   * **named export** - Allows to export multiple values from a module by name. When importing from other module, the user needs to use the same name to reference them. Use {} while importing. 
+   * **default export** - Allows to exports single value from a module as the default export. Th user can use any name to reference while importing.   
 
 ## ExpressJS 
 
@@ -198,6 +248,7 @@
 
 3. **Virtual DOM**  
    * This is the copy of the actual DOM in the memory which is used by reactJS update the rendering more efficiently. 
+   * JavaScript object 
   
 4. **useState**   
    * Allows users to track the state in a functional component 
@@ -211,7 +262,51 @@
 6. **props**  
    * Inputs to the react component 
    * Can be used to pass the parameters from parent to child component 
+   * Readonly components / immutable 
 
+7. **Difference between Real DOM and Virtual DOM**    
+   **Virtual DOM**  
+   * Cant manipulate the HTML directly, updates done via updating the JSX elements 
+   * Faster updates 
+   * Updates the changes elements only
+
+   **Real DOM**  
+   * Manipulates the HTML directly 
+   * Slower updates 
+   * Updates the complete DOM 
+
+8. **Features in ReactJS**    
+
+
+9. **JSX**  
+   * Javascript XML  
+   * Helps to write HTML like code in the Javascript file 
+   * Browser can not read the JSX file, during the compilation it is converted to normal Javascript (JSX transformers) 
+
+10. **Why ReactJS - Advantages**   
+   * Reusable components  
+   * Virtual DOM 
+   * Declartive Style 
+   * Large community and Eco System 
+
+11. **How does rendering work in ReactJS?**  
+   * 
+
+12. **Higher Order Components (HOC)**   
+   * Function accepts a component and returns a enhanced component 
+   * Used to share the commmon functionality between the code without repeating the code. 
+   * When additional props are passed from parent to child, it goes to the HOC. So passing the remaining props using spread operator is a must. 
+   * Additional parameters can also be passed to the HOC. 
+
+
+
+### Context 
+3 steps   
+1. create context 
+2. provide context value 
+3. consume context value  
+
+1. 
 
 useState  
 useEffect   

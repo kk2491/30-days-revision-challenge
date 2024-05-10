@@ -371,9 +371,67 @@ Character Encoding
    * Monitoring service used to visualize the metrics and perform perfomance analysis. 
    * Can be integrated with MongoDB 
 
+## Additional Concepts  
 
+### **Micro-Service Design Patterns**  
 
+### **DDoS** - **Distributed Denial of Service** 
+  Reference : https://www.imperva.com/learn/ddos/ddos-attacks/  
+ 
+* Attacker floods the API system with Traffic to prevent valid users from accessing the services. 
+* Sub-category of **DoS** - Denial of Service
+* In **DoS** a single internet connection is used to generate the traffic, and in case of **DDoS** multiple connections are used.  
+  
 
+**Types of DDoS**
+* Volumetric Attack 
+* Protocol Based Attack 
+* Application Layer Attack 
 
+1. **Volumetric Attack** - Layer 3   
+   * Floods the network with high volume of traffic, overwhelming the network bandwidth. Thus causing the services to become unavailable. 
+   * **Example 1** : UDP Floods   
+     Imaging a scenario where attacker has access to large number of compromised devices (botnets). Attacker uses these devices to bombard the services with UDP Packets.  
+     These packets are essentially short messages with minimal data and does not require any response from the server.  
+     However, the massive amount of these packets consumes significant bandwidth, making it difficult for legitamate requests to process. Eventually it may make the service completely unavaiable. 
+   * **Example 2** : DNS Amplification  
+     This exploits the way the Domain Name Server works to bombard the system with flood of traffic.  
+     * Spoofed Requests - The attackers does not directly target the victim system, instead they send a bunch of DNS specially requests to Open DNS Resolvers. These requests are spoofed to have source IP same as the Victim's IP.  
+     * Unsuspecting Resolvers - Since the requests appears to be coming from the Victim's system, the DNS resolvers responds with the requested data. 
+     * Amplified Response - The key amplification lies in the data requested from the DNS Resolver. Attackers often target the record types which contain lot of data. 
+     * Traffic Flood - Because of the spoofed IP address, the amplified data sent to the Victim's system causing increase in the traffic, consuming the network bandwidth and affecting the legitamate users.  
+    
+2. **Protocol Based Attack** - Layer 3 
+   * Attackers send a large amount of incomplete connection requests to Victim's servers. These packets loads the systems, as the system waits for the response of incomplete connection requests. This prevents the system from processing legitamate requests.  
+   * **Example 1** : SYN Floods / Packets   
+     During the 3 Way TCP Handshake 
+     * Client Initiates the Connection (SYN) 
+     * Server Sends the Acknowledgment (SYN-ACK)
+     * Client Confirms (ACK)
+     In the even of attack, the attacker sends massive amount of requests / SYN packets to the server, but never complete the handshake. 
+     This creates the queue of incomplete connection requests, using up the servers' resouces, this prevents the legitamate requests from processing.  
+     And also the server may have a limited capacity on the number of connection requests it can keep open. If the queue is filled with fake users, the real users requests may get dropped.  
+
+3. **Application Layer Attack** - Layer 7  
+   Attackers send massive number of API requests thus causing the system to become unavailable due to resource exhaustion.  
+   * **Example 1** : API Floods   
+     Attackers sends massive amount of API requests. This consumes the resources and may make the system unavailable for legitamate user requests. 
+   * **Example 2** : Resource Exhaustion Attacks  
+     Attackers target specific endpoint which consumes more resources.  
+     Database queries, memory intensive API etc.  
+
+In simple terms, lets consider an example of highway road  
+
+1. **Volumetric Attacks** is when the highway road is filled with the large number of empty trucks, using up the majority of the roads and impacting the legitamate cars. 
+2. **Application Level Attacks** is when the highway road is filled with large number of loaded trucks which are going very slow causing the delay in system, and impacting the other drivers / cars. 
+3. **Protocol Level Attacks** is when the large number of trucks enter the highway, drivers park on the road and run away, leaving the trucks behind. This impacts the other legitamate drivers / cars to use the system.   
+
+**Prevention**  
+* Reduce Attack Surfaces  
+  * Expose only the endpoints which are required. 
+  * Add authentication, authorization and input validation. 
+* Rate limiting  
+  * Add rate limiting to limit the number of requests generated from a particular IP. 
+  * Geo-fencing - Block requests generated from suspicious geo locations.
 
 

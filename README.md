@@ -376,12 +376,13 @@ Character Encoding
 ### **Micro-Service Design Patterns**  
 
 ### **DDoS** - **Distributed Denial of Service** 
-  Reference : https://www.imperva.com/learn/ddos/ddos-attacks/  
+  Reference :  
+  https://www.imperva.com/learn/ddos/ddos-attacks/   
+  https://www.youtube.com/watch?v=_b_I-mJ3Sjk&ab_channel=GoogleCloudTech
  
 * Attacker floods the API system with Traffic to prevent valid users from accessing the services. 
 * Sub-category of **DoS** - Denial of Service
 * In **DoS** a single internet connection is used to generate the traffic, and in case of **DDoS** multiple connections are used.  
-  
 
 **Types of DDoS**
 * Volumetric Attack 
@@ -426,12 +427,61 @@ In simple terms, lets consider an example of highway road
 2. **Application Level Attacks** is when the highway road is filled with large number of loaded trucks which are going very slow causing the delay in system, and impacting the other drivers / cars. 
 3. **Protocol Level Attacks** is when the large number of trucks enter the highway, drivers park on the road and run away, leaving the trucks behind. This impacts the other legitamate drivers / cars to use the system.   
 
-**Prevention**  
+**Prevention**   
+
+**Threat Modeling**   
+1. Identify the possible attack surfaces 
+2. Identity threats to the surfaces 
+   1. Tracking new DDoS attack types  
+3. Understanding the impact of the experienced threats  
+4. Define pro-active mitigations  
+5. Monitor for threats and mitigations  
+
+**Capacity Modeling**  
+1. Understanding the baseline traffic.  
+2. Planning to absorb low unexpected spikes by scaling. 
+3. Planning to absorb new events (in case of new feature release). 
+
+**Mitigate DDoS Risk**  
+1. Rate limiting. 
+2. Use threat intelligence to limit the traffic volumes from unknown bad sources. 
+3. Limit the traffic from the outside of the target regions (Geo-fence). 
+
+**Mitigate Bot Risk**  
+1. Deploy reCAPTCHA to detect the bot sending high volumes. 
+2. Consider rate limiting.
+
+**Mitigate Web Attacks**  
+1. Deploy firewall rules (WAF - Web Application Firewall). 
+2. OWASP - T10 mitigations. 
+3. WAAP using Cloud Armour (WAAP - Web Application and API Protection).
+
+In general:  
+
 * Reduce Attack Surfaces  
   * Expose only the endpoints which are required. 
   * Add authentication, authorization and input validation. 
 * Rate limiting  
   * Add rate limiting to limit the number of requests generated from a particular IP. 
   * Geo-fencing - Block requests generated from suspicious geo locations.
+* Reactive monitoring and alert configuration for unexpected spikes in traffic. 
+* DDoS protection services - Cloud based solutions or Third-party providers. 
+* Stay upto date with the DDoS trends.  
 
+
+
+### OWASP  
+
+### Javascript Cookies vs Local Storage vs Session Storage  
+
+|      -             | Cookies          | Local Storage | Session Storage |  
+| ---------------    | -------          | ------------- | --------------- | 
+| Max Capacity       | 4 kb             | 10 Mb         | 5 Mb            |  
+| Browers            | HTML4/5          | HTML5         | HTML5           |  
+| Accessibility      | Any window       | Any window    | Same tab        |  
+| Expires            | Manually set     | Never         | On tab close    |  
+| Storage            | Browser & Server | Browser only  | Browser only    |  
+| Sent with Requests | Yes              | No            | No              |  
+
+Thanks to [We Dev Simplified](https://www.youtube.com/watch?v=GihQAC1I39Q&ab_channel=WebDevSimplified)  
 
